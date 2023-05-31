@@ -5,9 +5,9 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract TimeLock {
 
-	address public owner;
+    address public owner;
     uint public startTime;
-	uint public lockTime =  (365 * 24 * 60 * 60);
+    uint public lockTime =  (365 * 24 * 60 * 60);
     uint public balance;
     uint constant internal fixedTax =  0.00055 ether;//550000000000000 wei;
 
@@ -18,20 +18,20 @@ contract TimeLock {
     mapping(address => bool) hasAnAccount;
     mapping(address => uint) addressBalance;
 
-	modifier isOwner(address _account){
-        require(owner == _account, "This feature is restricted to the owner!");
-		_;
-	}
+    modifier isOwner(address _account){
+	require(owner == _account, "This feature is restricted to the owner!");
+	_;
+    }
 
     modifier userCheck(address _account){
         require(hasAnAccount[msg.sender], "You have not performed any transaction on this smart contract!");
-		_;
-	}
+	_;
+    }
 
     modifier balanceCheck(address _account, uint _amount){
         require(addressBalance[msg.sender] >= _amount, "You do not have sufficient amount on this smart contract!");
-		_;
-	}
+	_;
+    }
 
     function getBalance() public {
         balance = address(this).balance;
@@ -57,19 +57,19 @@ contract TimeLock {
         addressBalance[owner] += fixedTax;
     }
 
-	function LockFunds() userCheck(msg.sender) public {
+    function LockFunds() userCheck(msg.sender) public {
         taxLockedFunds(msg.sender);
-		startTime = block.timestamp;
+	startTime = block.timestamp;
         lockTime += startTime;
-	}
+    }
 
-	function withdraw() userCheck(msg.sender) public {
+    function withdraw() userCheck(msg.sender) public {
         uint daysLeft = howManyDaysLeft();
         require(daysLeft <= 0, "Your funds are still locked");
         uint amountLocked = addressBalance[msg.sender];
         addressBalance[owner] = 0;
         payable(msg.sender).transfer(amountLocked);
-	}
+    }
 
     function withDrawTax() isOwner(msg.sender) public {
         require(addressBalance[owner] >= 0, "Your funds are still locked");
