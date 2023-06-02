@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -19,45 +19,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "balance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getBalance",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "howManyDaysLeft",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "int256",
 						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "lockTime",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"type": "int256"
 					}
 				],
 				"stateMutability": "view",
@@ -87,19 +54,6 @@
 				"name": "pay",
 				"outputs": [],
 				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "startTime",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -136,7 +90,7 @@
 		"compilationTarget": {
 			"contracts/TimeLock.sol": "TimeLock"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -173,11 +127,11 @@
 			]
 		},
 		"contracts/TimeLock.sol": {
-			"keccak256": "0x016481a6b2cf36d6f5acc192532dbf59c119a3c0c2bb788790bf3ad9254945e3",
+			"keccak256": "0xbffb8e7aeaafa22f11164ce339f6fbad012074fef2187cf1d876dd89fdf002c0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8cfd9e254ed42b8ca5205d1c1b5c407967588718671211751e9dddee97a64edd",
-				"dweb:/ipfs/QmcpUmRLHXv4Lx6SvTK9hiaQZCP89Tv3q131N7WtkFmN6g"
+				"bzz-raw://a8c314148e6cbdca2cd3e656a55234a87ea975bed31f2f452fb5952678000ca1",
+				"dweb:/ipfs/QmTR9pXmgRVYgV3xQfcpWDX84AmUP3fpnyEtULbRHuf8sT"
 			]
 		}
 	},
